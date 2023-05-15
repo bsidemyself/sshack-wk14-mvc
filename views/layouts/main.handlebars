@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Source+Sans+Pro'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css'>  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">Tech Blog</div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                <a class="navbar-item" href="/">
+                    Home
+                </a>
+
+                <a class="navbar-item" href="/dashboard">
+                    Dashboard
+                </a>
+                <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                    {{#unless loggedIn}}
+                    <a class="button is-primary" href="/login">
+                        <strong>Log in</strong>
+                    </a>
+                    {{/unless}}
+                    <a class="button is-light">Log Out</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="">
+        {{{body}}}
+    </main>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+</html>
